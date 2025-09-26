@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{% if usuario %}Editar Usuario{% else %}Agregar Usuario{% endif %}{% endblock %}
+{% block content %}
+  <h2>{% if usuario %}Editar Usuario{% else %}Agregar Usuario{% endif %}</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">Guardar</button>
+    <a class="btn btn-secondary" href="{% url 'cursos:usuario_list' %}">Cancelar</a>
+  </form>
+{% endblock %}
