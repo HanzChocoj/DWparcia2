@@ -10,6 +10,7 @@ def video_list(request):
     return render(request, 'cursos/videos_list.html', {'videos': videos})
 
 
+
 def video_create(request):
     form = VideoForm(request.POST or None)
     if form.is_valid():
@@ -57,6 +58,7 @@ def usuario_edit(request, pk):
         form.save()
         return redirect('cursos:usuario_list')
     return render(request, 'cursos/usuario_form.html', {'form': form, 'usuario': usuario})
+
 
 
 # CREDITOS
